@@ -1,5 +1,7 @@
 ### Notebook
 
+Important for those launching from CIS countries - enable VPN
+
 [Application link](https://react-notebook-zeta.vercel.app)
 
 ---
