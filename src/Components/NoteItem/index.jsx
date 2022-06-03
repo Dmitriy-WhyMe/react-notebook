@@ -1,28 +1,26 @@
 import { AiOutlineSwapLeft } from "react-icons/ai";
-import { AiOutlineEdit } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
 import style from './NoteItem.module.sass'
-import { Link } from "react-router-dom";
 
-const NoteItem = () => {
+const NoteItem = ({closeModal, title, description, link, handleDelete, item}) => {
   return (
-    <div className="container">
+    <>
         <div className={style.header}>
             <div className={style.left}>
-                <Link to="/allnotes">
-                    <AiOutlineSwapLeft />
-                </Link>
-                <h2 className={style.title}>Title</h2>
+                <div onClick={closeModal}>
+                    <AiOutlineSwapLeft onClick={closeModal}/>
+                </div>
+                <h2 className={style.title}>{title}</h2>
             </div>
             <div className={style.flex}>
-                <AiOutlineEdit />
-                <AiOutlineClose />
+                <AiOutlineClose onClick={() => handleDelete(item)}/>
             </div>
         </div>
-        <p className={style.text}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos pariatur consequuntur nihil est? Commodi minima distinctio sunt accusamus necessitatibus temporibus praesentium natus modi qui ratione illo esse tenetur odit error, dicta quod vel ducimus nostrum sapiente, porro aspernatur fugit nam.
-        </p>
-    </div>
+        <p className={style.text}>{description}</p>
+        <a href={link} target="_blanck" className={style.link}>
+            Перейти по ссылке
+        </a>
+    </>
   )
 }
 

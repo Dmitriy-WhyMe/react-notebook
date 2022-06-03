@@ -1,36 +1,42 @@
-import React from 'react'
 import CategoryItem from '../CategoryItem'
+import useRead from '../../hoocks/useRead'
 
-const index = () => {
+const Index = () => {
+  const countYotube = useRead("YouTube").length
+  const countFigma = useRead("Figma").length
+  const countTikTok = useRead("TikTok").length
+  const countOtherLinks = useRead("OtherLinks").length
+  const countOtherNotes = useRead("OtherNotes").length
+  
   return (
     <div className="flex-category">
       <CategoryItem 
         imgUrl="img/kozha_derevyannyy_fon_tekstura_shov_50420_240x320.jpg"
-        link="" 
+        link="/youtube" 
         title="YouTube links" 
-        count="10 notes"/>
+        count={countYotube}/>
       <CategoryItem 
         imgUrl="img/kozha_derevyannyy_fon_tekstura_shov_50420_240x320.jpg"
-        link="" 
+        link="/tiktok" 
         title="TikTok links" 
-        count="7 notes"/>
+        count={countTikTok}/>
       <CategoryItem 
         imgUrl="img/kozha_derevyannyy_fon_tekstura_shov_50420_240x320.jpg"
-        link="" 
+        link="/figma" 
         title="Figma links" 
-        count="20 notes"/>
+        count={countFigma}/>
       <CategoryItem 
         imgUrl="img/kozha_derevyannyy_fon_tekstura_shov_50420_240x320.jpg"
-        link="" 
+        link="/otherlinks" 
         title="Other links" 
-        count="9 notes"/>
+        count={countOtherLinks}/>
       <CategoryItem 
         imgUrl="img/kozha_derevyannyy_fon_tekstura_shov_50420_240x320.jpg"
-        link="" 
+        link="/othernotes" 
         title="Other notes" 
-        count="8 notes"/>
+        count={countOtherNotes}/>
     </div>
   )
 }
 
-export default index
+export default Index

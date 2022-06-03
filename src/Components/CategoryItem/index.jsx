@@ -6,7 +6,7 @@ const index = ({imgUrl,link,title,count}) => {
     <Link to={link}className={style.item}>
         <h3>{title}</h3>
         <img src={imgUrl} alt=""/>
-        <div className={style.count}>{count}</div>
+        <div className={style.count}>{count} notes</div>
     </Link>
   )
 }
