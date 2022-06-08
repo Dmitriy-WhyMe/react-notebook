@@ -37,7 +37,7 @@ const AllNotes = ({titlePage}) => {
       </div>
       <div className="flex-notes">
         {notes.map(item => (
-          <NotePreivew 
+          <NotePreivew
             key={item.uuid} 
             title={item.title} 
             description={item.description} 

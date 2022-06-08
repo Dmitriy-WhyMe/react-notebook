@@ -6,13 +6,14 @@ import { db } from '../firebase'
 import { ref, remove } from 'firebase/database';
 import useRead from '../hoocks/useRead';
 
-const FigmaCategory = ({titlePage}) => {
-  const read = useRead("Figma")
+const CategoryPage = ({titlePage, filterPage}) => {
+  
+  const read = useRead(filterPage)
   //delete
   const handleDelete = (item) => {
     remove(ref(db, `/${item.uuid}`));
   };
-  
+
   return (
     <div className="container">
       <div className="header">
@@ -29,7 +30,7 @@ const FigmaCategory = ({titlePage}) => {
             description={item.description} 
             link={item.link} 
             date={item.date} 
-            handleDelete={handleDelete}
+            handleDelete={handleDelete} 
             item={item}
           />
         ))}
@@ -39,4 +40,4 @@ const FigmaCategory = ({titlePage}) => {
   )
 }
 
-export default FigmaCategory
+export default CategoryPage
